@@ -1,0 +1,30 @@
+.hamburguer
+    display: none
+    position: absolute
+    top: 25px
+    right: 15px
+    gap: 5px
+    flex-direction: column
+    margin-right: 1rem
+    span
+        background-color: #fff
+        width: 20px
+        height: 2px
+        transition: all 1s
+
+    @media (max-width: 425px)
+        display: flex
+        justify-items: center
+        align-items: center
+        &.active
+
+            span
+                transition: all 1s
+                &:nth-child(1)
+                    transform: rotate(50deg) translate(5px, 5px)
+                &:nth-child(2)
+                    width: 1px
+                &:nth-child(3)
+                    transform: rotate(-50deg) translate(5px, -5px)
+                    
+

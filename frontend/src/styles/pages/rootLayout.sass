@@ -1,0 +1,38 @@
+@use '../variables'
+    
+header, footer
+    flex: 0 1 auto
+    height: 70px
+    background-color: variables.$background-header-footer
+    color: variables.$text-color-secondary
+
+header
+    display: flex
+    justify-content: space-between
+    align-items: center
+    padding: 1rem
+
+    a
+        color: variables.$text-color-secondary
+        
+        span
+            font-weight: bold
+            font-size: 1.5em
+    
+    div
+        display: flex
+        align-items: center
+
+main
+    flex: 1 1 auto
+    max-width: 1200px
+    width: 100%
+    margin: 0 auto
+    background-color: variables.$backgroud-main-color
+    padding: 1rem
+    color: variables.$text-color
+
+footer
+    display: flex
+    justify-content: center
+    align-items: center
