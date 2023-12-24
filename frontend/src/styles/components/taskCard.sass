@@ -1,0 +1,22 @@
+@use '../variables'
+@import '../mixins'
+
+.taskCard
+    display: flex
+    align-items: center
+    justify-content: space-between
+    padding: 5px
+    transition: background 0.3s ease
+
+    &:hover
+        background-color: variables.$background-color-card-hover
+
+    > div
+        display: flex
+        gap: 1rem
+
+    button
+        @include btn-style
+        @extend .btn-delete
+        padding: 0.5rem
+        border-radius: 0

@@ -1,0 +1,47 @@
+@use '../variables'
+@import '../mixins'
+
+.task
+
+    .start
+        display: flex
+        justify-content: space-between
+        flex-wrap: wrap
+        align-items: center
+        border-bottom: 1px solid variables.$menu-hover
+        
+        h1
+            font-size: clamp(20px, 2vw, 70px)
+
+
+        div
+           display: flex
+           gap: 1rem
+           margin-bottom: 10px
+        
+        a 
+            @include btn-style
+
+            &:nth-child(1)
+               @extend .btn-edit
+            
+            &:nth-child(2)
+               @extend .btn-returnPage
+         
+        
+        @media(max-width: 638px)
+            gap: 1rem
+            justify-content: center
+
+            div
+                width: 100%
+                justify-content: flex-end
+
+    .tasks
+        
+        .title
+            font-weight: bold
+                
+                
+                
+                    
