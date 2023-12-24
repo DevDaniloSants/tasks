@@ -1,0 +1,39 @@
+@use '../variables'
+@import '../mixins'
+
+.card
+    flex: 1 1 40%
+    max-width: 560px
+    background-color: variables.$background-color-card
+    padding: 10px
+    border-radius: variables.$border-radius-card
+    box-shadow: variables.$box-shadow-card
+
+    display: flex
+    flex-direction: column
+    gap: 1rem
+
+    div
+        display: flex
+        gap: 0.3rem
+        justify-content: space-between
+        
+        a
+            @include btn-style(100%)
+            @extend .btn-view
+        button
+            @include btn-style(100%)
+            padding: 0.5rem
+        
+
+            &:nth-child(2)
+                @extend .btn-edit
+            &:nth-child(3)
+                @extend .btn-delete
+                
+
+    @media (max-width: 621px)
+        width: 100%
+        max-width: 100%        
+                
+    
