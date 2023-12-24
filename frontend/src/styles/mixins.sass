@@ -1,0 +1,45 @@
+@use 'variables'
+     
+@mixin btn-style($width: null, $min-width: null)
+  width: $width
+  min-width: $min-width
+  padding: 1rem 
+  transition: 0.3s
+  border: 1px solid transparent
+  color: variables.$text-color-secondary
+  border-radius: variables.$border-radius-button
+  text-align: center
+
+
+  &.btn-returnPage
+   background-color: variables.$btn-color-returnPage
+   &:hover
+         background-color: transparent
+         border: 1px solid variables.$btn-color-returnPage
+         color: variables.$btn-color-returnPage
+
+  &.btn-view
+     color: variables.$text-color-secondary
+     background-color: variables.$btn-color-view
+     &:hover
+         background-color: transparent
+         border: 1px solid variables.$btn-color-view
+         color: variables.$btn-color-view
+
+  &.btn-edit
+     background-color: variables.$btn-color-edit
+     &:hover
+        background-color: transparent
+        border: 1px solid variables.$btn-color-edit
+        color: variables.$btn-color-edit
+
+  &.btn-delete
+     background-color: variables.$btn-color-delete
+     &:hover
+         background-color: transparent
+         border: 1px solid variables.$btn-color-delete
+         color: variables.$btn-color-delete
+
+  
+
+
