@@ -6,6 +6,7 @@ const router = express.Router();
 const {
   register,
   getAllChecklist,
+  deleteChecklist,
 } = require('../controllers/ChecklistController');
 
 // middlewares
@@ -17,5 +18,6 @@ const {
 // routes
 router.post('/register', checklistCreateValidation(), validate, register);
 router.get('/', getAllChecklist);
+router.delete('/:id', deleteChecklist);
 
 module.exports = router;
