@@ -3,7 +3,10 @@ const express = require('express');
 const router = express.Router();
 
 // Controller
-const { register } = require('../controllers/ChecklistController');
+const {
+  register,
+  getAllChecklist,
+} = require('../controllers/ChecklistController');
 
 // middlewares
 const validate = require('../middlewares/handleValidation');
@@ -13,5 +16,6 @@ const {
 
 // routes
 router.post('/register', checklistCreateValidation(), validate, register);
+router.get('/', getAllChecklist);
 
 module.exports = router;

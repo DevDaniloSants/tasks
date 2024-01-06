@@ -2,7 +2,9 @@ const mongoose = require('mongoose');
 
 const { Schema } = mongoose;
 
-const checklistSchema = Schema({
+const checklistSchema = Schema(
+  
+  {
   name: String,
   tasks: [
     {
@@ -10,7 +12,12 @@ const checklistSchema = Schema({
       ref: 'Task',
     },
   ],
-});
+},
+{
+  timestamps: true
+}
+
+);
 
 const Checklist = mongoose.model('Checklist', checklistSchema);
 
