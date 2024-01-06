@@ -17,6 +17,24 @@ const getAllChecklist = async (req, res) => {
   return res.status(200).json(checklists);
 };
 
+const getChecklistId = async (req, res) => {
+  const { id } = req.params;
+
+  try {
+    const checklist = await Checklist.findById(id);
+
+    if (!checklist) {
+      res.status(404).json({ errors: 'Checklist não encontrada' });
+      return;
+    }
+
+    res.status(200).json(checklist);
+  } catch (error) {
+    res.status(404).json({ errors: 'Checklist não encontrada' });
+    return;
+  }
+};
+
 const deleteChecklist = async (req, res) => {
   const { id } = req.params;
 
@@ -44,4 +62,5 @@ module.exports = {
   register,
   getAllChecklist,
   deleteChecklist,
+  getChecklistId
 };
