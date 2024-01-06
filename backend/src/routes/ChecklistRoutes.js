@@ -7,8 +7,11 @@ const { register } = require('../controllers/ChecklistController');
 
 // middlewares
 const validate = require('../middlewares/handleValidation');
+const {
+  checklistCreateValidation,
+} = require('../middlewares/checklistValidation');
 
 // routes
-router.post('/register', validate, register);
+router.post('/register', checklistCreateValidation(), validate, register);
 
 module.exports = router;
