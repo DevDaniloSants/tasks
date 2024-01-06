@@ -35,6 +35,34 @@ const getChecklistId = async (req, res) => {
   }
 };
 
+const updateChecklist = async (req, res) => {
+  const { id } = req.params;
+  const { name } = req.body;
+
+  try {
+    const checklist = await Checklist.findById(id);
+
+    if (!checklist) {
+      res.status(404).json({ errors: 'Checklist não encontrada' });
+      return;
+    }
+
+    if (name) {
+      checklist.name = name;
+    }
+
+    await checklist.save();
+
+    res.status(200).json({
+      checklist,
+      message: 'Checklist atualizada com sucesso',
+    });
+  } catch (error) {
+    res.status(404).json({ errors: 'Checklist não encontrada' });
+    return;
+  }
+};
+
 const deleteChecklist = async (req, res) => {
   const { id } = req.params;
 
@@ -62,5 +90,6 @@ module.exports = {
   register,
   getAllChecklist,
   deleteChecklist,
-  getChecklistId
+  getChecklistId,
+  updateChecklist,
 };
