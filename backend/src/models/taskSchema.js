@@ -3,8 +3,8 @@ const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
 const taskSchema = Schema({
-  name: { type: String, required: true },
-  done: { type: Boolean, default: false },
+  name: String,
+  done: Boolean,
   checklist: {
     type: Schema.Types.ObjectId,
     ref: 'Checklist',

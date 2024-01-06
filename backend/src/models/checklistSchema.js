@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
 const checklistSchema = Schema({
-  name: { type: String, required: true },
+  name: String,
   tasks: [
     {
       type: Schema.Types.ObjectId,

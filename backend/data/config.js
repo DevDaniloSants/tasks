@@ -1,8 +1,22 @@
+
 const mongoose = require('mongoose');
+const dbUser = process.env.DB_USER;
+const dbPassword = process.env.DB_PASSWORD;
 
-mongoose.Promise = global.Promise;
+const conn = async () => {
+  try {
+    const dbConn = await mongoose.connect(
+      `mongodb+srv://${dbUser}:${dbPassword}@cluster0.eeyupvr.mongodb.net/?retryWrites=true&w=majority`,
+    );
 
-mongoose
-  .connect('mongodb://localhost/to-do-list')
-  .then(() => console.log('conectado ao banco de dados'))
-  .catch((error) => console.log(error));
+    console.log('Conectado ao banco!');
+
+    return dbConn;
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+conn()
+
+module.exports = conn;

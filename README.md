@@ -48,4 +48,4 @@ npm run dev
       </a>
     </td>
   </tr>
-</table>
+</table> 
