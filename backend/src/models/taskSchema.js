@@ -4,12 +4,7 @@ const { Schema } = mongoose;
 
 const taskSchema = Schema({
   name: String,
-  done: Boolean,
-  checklist: {
-    type: Schema.Types.ObjectId,
-    ref: 'Checklist',
-    required: true,
-  },
+  done: { type: Boolean, default: false },
 });
 
 const Task = mongoose.model('Task', taskSchema);
